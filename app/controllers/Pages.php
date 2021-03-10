@@ -1,6 +1,6 @@
 <?php
 
-class Pages {
+class Pages extends Controller {
 
     public function __construct() {
 
@@ -9,12 +9,17 @@ class Pages {
     }
 
     public function index() {
-        
+
+        $data = [
+            'title' => 'website'
+        ];
+
+        $this->view('index', $data);
     }
 
-    public function about($id) {
+    public function about() {
 
-        echo $id;
+        $this->view('pages/about');
     }
 
 }
