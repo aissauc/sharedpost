@@ -14,7 +14,7 @@ class Pages extends Controller {
             'title' => 'website'
         ];
 
-        $this->view('index', $data);
+        $this->view('pages/index', $data);
     }
 
     public function about() {

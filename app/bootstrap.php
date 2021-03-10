@@ -1,5 +1,8 @@
 <?php
 
+// Load config file
+require_once('config/config.php');
+
 // // Load libraries files
 
 // require_once('libraries/Core.php');
