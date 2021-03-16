@@ -8,15 +8,19 @@ class Pages extends Controller {
 
     public function index() {
         $data = [
-            'title' => 'website'
+            'title'       => 'Share posts',
+            'description' => 'Social network to share posts'
         ];
 
         $this->view('pages/index', $data);
     }
 
     public function about() {
-
-        $this->view('pages/about');
+        $data = [
+            'title'       => 'About us',
+            'description' => 'App to share posts between friends built on traveryMvc framework'
+        ];
+        $this->view('pages/about', $data);
     }
 
 }
