@@ -19,7 +19,24 @@ class Users extends Controller {
 				'confirm_password_err' => ''	
 			];
 			// LOad the view
-			$this->view('users/register');
+			$this->view('users/register', $data);
+		}
+
+	}
+	public function login() {
+		// Check for post
+		if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+			// Proccess form
+		} else {
+			// Init data
+			$data = [
+				'email' => '',
+				'password' => '',
+				'email_err' => '',
+				'password_err' => ''
+			];
+			// LOad the view
+			$this->view('users/login', $data);
 		}
 
 	}

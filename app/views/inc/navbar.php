@@ -1,4 +1,5 @@
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark mb-3">
+  <div class="container">
       <a class="navbar-brand" href="<?= URL_ROOT; ?>"><?= SITE_NAME; ?></a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#togglenavbar" aria-controls="togglenavbar" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -23,4 +24,5 @@
         </ul>
 
       </div>
-    </nav>
+    </div>  
+  </nav>
