@@ -4,7 +4,7 @@
 define('DB_HOST', 'localhost');
 define('DB_USER', 'root');
 define('DB_PASS', '');
-define('DB_NAME', 'sharedpost');
+define('DB_NAME', 'shareposts');
 
 
 //App root
