@@ -6,6 +6,8 @@ require_once('config/config.php');
 // Load url helpers
 require_once('helpers/url_helper.php');
 
+// Load session helpers to display msg when registered
+require_once('helpers/session_helper.php');
 
 // // Load libraries files
 
