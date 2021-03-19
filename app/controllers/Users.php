@@ -166,12 +166,12 @@ class Users extends Controller {
 		$_SESSION['user_name'] = $user->name;
 		$_SESSION['user_email'] = $user->email;
 		
-		// Temporary redirect
-		redirect('pages/index');
+		// Redirect to post page
+		redirect('posts');
 
 	}
 
-	// Logged out and kill the session
+	// Logged out and unset the session
 	public function logout()
 	{
 		// unset the session
@@ -183,15 +183,6 @@ class Users extends Controller {
 		session_destroy();
 		// redirect user to login page
 		redirect('users/login');
-	}
-
-	public function isLoggedIn()
-	{
-		if (isset($_SESSION['user_id'])) {
-			return true;
-		} else {
-			return false;
-		}
 	}
 
 }
