@@ -41,4 +41,15 @@ class Post {
 		}
 	}
 
+	// Get post by id
+	public function getPostById($id) {
+		$this->db->query('SELECT * FROM posts WHERE id = :id');
+		// bind values
+		$this->db->bind(':id', $id);
+
+		$row = $this->db->single();
+
+		return $row;
+	}
+
 }

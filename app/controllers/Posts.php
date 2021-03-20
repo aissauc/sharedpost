@@ -7,13 +7,14 @@ class Posts extends Controller {
 			redirect('users/login');
 		}
 
-		$this->PostModel = $this->model('Post');
+		$this->postModel = $this->model('Post');
+		$this->userModel = $this->model('User');
 	}
 
 	public function index()
 	{
-		$this->PostModel->getPosts();
-		$posts = $this->PostModel->getPosts();
+		$this->postModel->getPosts();
+		$posts = $this->postModel->getPosts();
 		$data = [
 			'posts' => $posts
 		];
@@ -45,7 +46,7 @@ class Posts extends Controller {
 
 			if (empty($data['title_err']) && empty($data['body_err'])) {
 				//validated
-				if ($this->PostModel->addPost($data)) {
+				if ($this->postModel->addPost($data)) {
 					flashMsg('post_msg', 'You succesfully added the post');
 					redirect('posts');
 				} else {
@@ -67,6 +68,17 @@ class Posts extends Controller {
 		}
 
 	}	
+
+	public function show($id) {
+		$post = $this->postModel->getPostById($id);
+		$user = $this->userModel->getUserById($post->user_id);
+		$data = [
+			'post' => $post,
+			'user' => $user
+		];
+
+		$this->view('posts/show', $data);
+	}
 }
 
 
